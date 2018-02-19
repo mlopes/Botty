@@ -177,7 +177,7 @@ Players can shoot within a limited range.
 
 Shooting frequency is capped on the server, as well as weapon cool off time. This serve the purpose of preventing shot spam, as well as prevent advantage from faster computers/connections.
 
-Shots have limited range, they won’t go across the whole board (maybe 4 squares vertically/horizontally, and 3 diagonal?). Shots will stop if they hit a solid square (more information about solid squares in the [Map topography](#heading=h.ptgys9qgym7r) section).
+Shots have limited range, they won’t go across the whole board (maybe 4 squares vertically/horizontally, and 3 diagonal?). Shots will stop if they hit a solid square (more information about solid squares in the [Map topography](#map-topography) section).
 
 ### Melée
 
