@@ -14,11 +14,15 @@ Bots game(replace with a proper name) is a realtime game. Players make http requ
 
 Request:
 
-{**'name'**: 'My Bot'}
+```json
+{ "name": "My Bot" }
+```
 
 Response:
 
-{ **'key'**: 'A4F912B'}
+```json
+{ "key": "A4F912B" }
+```
 
 From now on, all requests take a header with the bot key.
 
@@ -30,7 +34,9 @@ From now on, all requests take a header with the bot key.
 
 Response:
 
-{ **'gameKey'**: 'AF563BA99C241'}
+```json
+{ "gameKey": "AF563BA99C241" }
+```
 
 A new game is started and the player starting the game is joined.
 
@@ -46,23 +52,17 @@ The player is joined to an existing game
 
 Response:
 
+```json
 {
-
-   **'startGameTimestamp'**: 1518620062,
-
-   **'players'**: [
-
-   'Bob',
-
-   'HAL',
-
-   'Marvin',
-
-   'Data'
-
+  "startGameTimestamp": 1518620062,
+  "players": [
+    "Bob",
+    "HAL",
+    "Marvin",
+    "Data"
   ]
-
 }
+```
 
 The request will be pending until all the players acknowledge or will timeout. When all players acknowledged start, the timestamp of the game start is sent back. This serves the purpose of confirming that all players can start at the same time, and all know when they can start making requests to the game.
 
@@ -82,55 +82,46 @@ All positions are relative to the player’s spawn point.
 
 Request:
 
+```json
 {
-
- **'move'**: 0,
-
- **'rotate'**: 'cw',
-
- **'shield'**: 1,
-
- **'shoot'**: 1
-
+  "move": 0,
+  "rotate": "cw",
+  "shield": 1,
+  "shoot": 1
 }
+```
 
 Response:
 
+```json
 {
-
- **'view'**: ['', '', '@', '%', '', '#', ''],
-
- **'hp'**: 100,
-
- **'position'**: {**'x'**: 2, **'y'**: 10},
-
- **'controlledCheckpoints'**: [
-
-   { **'x'**: 8, **'y'**:  3},
-
-   { **'x'**: 6, **'y'**: 6}
-
- ],
-
- **'gameStatus'**: {
-
-   **'status'**: 'running',
-
-   **'score'**: {
-
-     **'Bob'**: 12,
-
-     **'HAL'**: 18,
-
-     **'Marvin'**: 0,
-
-     **'Data'**: 100
-
-   }
-
- }
-
+  "view": ["", "", "@", "%", "", "#", ""],
+  "hp": 100,
+  "position": {
+    "x": 2,
+    "y": 10
+  },
+  "controlledCheckpoints": [
+    {
+      "x": 8,
+      "y": 3
+    },
+    {
+      "x": 6,
+      "y": 6
+    }
+  ],
+  "gameStatus": {
+    "status": "running",
+    "score": {
+      "Bob": 12,
+      "HAL": 18,
+      "Marvin": 0,
+      "Data": 100
+    }
+  }
 }
+```
 
 View shows the contents of the tiles to which the player is facing
 
